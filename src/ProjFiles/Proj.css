@@ -1,0 +1,31 @@
+.redBorderComp
+{
+    width: 300px;
+    height: 150px;
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
+.greenBorderComp
+{
+    width: 300px;
+    height: 150px;
+    border: 2px solid green;
+    border-radius: 10px;
+}
+
+.inputText
+{
+    width: 100px;  
+}
+
+
+.yellowButton
+{
+    background-color: yellow;
+}
+
+.grayButton
+{
+    background-color: lightgrey;
+}
