@@ -11,17 +11,14 @@ class User extends Component
     render()
     {
         let styleName = this.props.user.todos.some(item => !item.completed) ? "redBorderComp" : "greenBorderComp";
-
-        
-        console.log("what is styleName? ", styleName)
-
+       
         return (
             <div className = {styleName}>
                 ID: &nbsp; {this.props.user.id}<br></br>
-                Name: <input className = "inputText" type = "text" value = {this.props.user.name} />
+                Name: <input className = "inputText" type = "text" defaultValue = {this.props.user.name} />
                 <br/>
 
-                Email: <input className = "inputText" type = "text"  value = {this.props.user.email} /> 
+                Email: <input className = "inputText" type = "text"  defaultValue = {this.props.user.email} /> 
                 <br></br>
                 <br></br>
 
