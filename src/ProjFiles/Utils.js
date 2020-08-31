@@ -9,7 +9,7 @@ const getAllUsers = async () =>
 
     allRestUsers.map(item =>
         {
-            return usersArr.push({id: item.id, name: item.name, email: item.email})
+            return usersArr.push({id: item.id, name: item.name, email: item.email, address: item.address})
         })
 
     // Getting data from TODOS

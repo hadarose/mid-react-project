@@ -22,18 +22,38 @@ class Parent extends Component
         this.setState({searchValue: e.target.value})
     }
 
+    saveData = (obj) =>
+    {
+       let index = this.state.users.findIndex(item => item.id == obj.id);
+       let newUsersArr = this.state.users;
+       newUsersArr[index].name = obj.newName;
+       newUsersArr[index].email = obj.newEmail;
+       
+       this.setState({users: newUsersArr})
+    }
+
+    deleteUser = (id) =>
+    {
+       let index = this.state.users.findIndex(item => item.id == id);
+       let newUsersArr = this.state.users;
+        newUsersArr.splice(index, 1);
+       
+       this.setState({users: newUsersArr})
+    }
+
     render()
     {
         let users = this.state.users;
-        
         if(this.state.searchValue)
         {
-            users = this.state.users.filter(user => user.name.includes(this.state.searchValue))
+            users = this.state.users.filter(user => 
+                    user.name.includes(this.state.searchValue) || user.email.includes(this.state.searchValue))
         }
 
         users = users.map((user) =>
             {
-               return <User key = {user.id} user = {user} todos = {user.todos} />
+                return <User key = {user.id} user = {user} todos = {user.todos} 
+                             callbackSave = {obj => this.saveData(obj)} callbackDelete = {id => this.deleteUser(id)}/>
             })
 
         return (
