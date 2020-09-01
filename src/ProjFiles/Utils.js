@@ -18,19 +18,23 @@ const getAllUsers = async () =>
     
     usersArr.map(item =>
         {
-            return item.todos = tasksArr.filter(x => x.userId == item.id);
+            return item.todos = tasksArr.filter(x => x.userId === item.id).slice(0,3);        
         })
 
-/*
+
     // Getting data from POSTS
     let respPosts = await axios.get("https://jsonplaceholder.typicode.com/posts");
     let allPosts = respPosts.data;
 
-    let userPosts = allPosts.filter(item => item.userId == id);
-    let [firstPost] = userPosts;*/
+    usersArr.map(item =>
+        {
+            return item.posts = allPosts.filter(x => x.userId === item.id).slice(0,2);        
+        })
+;
 
    usersArr[0].todos = [{userId: 1, id: 1, title: "delectus aut autem", completed: true}]
-    return (usersArr);
+   
+   return (usersArr);
 }
 
 

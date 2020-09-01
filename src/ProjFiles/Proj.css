@@ -1,17 +1,21 @@
 .blackBorderComp
 {
     width: 250px;
-    height: 75px;
     border: 1px solid black;
     border-radius: 10px;
 }
-
 
 .redBorderComp
 {
     width: 300px;
     border: 2px solid red;
     border-radius: 10px;
+    padding-bottom: 5px;
+}
+
+.redBorderComp.selected
+{
+    background-color: orange;
 }
 
 .greenBorderComp
@@ -19,20 +23,49 @@
     width: 300px;
     border: 2px solid green;
     border-radius: 10px;
+    padding-bottom: 5px;
 }
 
+.greenBorderComp.selected
+{
+    background-color: orange;
+}
+
+.purpleBorderComp
+{
+    margin: 10px;
+    width: 350px;
+    border: 2px solid purple;
+}
+
+.todosComp
+{
+    float: right;
+    width: 450px;
+    border: 2px solid black;
+    margin: 20px;
+}
+
+.postsComp
+{
+    float: center;
+    width: 450px;
+    border: 2px solid black;
+    margin: 20px;
+}
 .inputText
 {
     width: 100px;  
 }
 
-
 .yellowButton
 {
+    height: 25px;
     background-color: yellow;
 }
 
 .grayButton
 {
+    height: 25px;
     background-color: lightgrey;
 }
