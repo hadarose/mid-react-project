@@ -37,13 +37,13 @@ class AddUser extends Component
         {
             return <div className = "todosComp" style = {{height: "100px"}}>
                         User Was Added Successfully
-                        <input type = "button"  className = "yellowButton" style = {{float: "right"}} 
+                        <input type = "button"  className = "yellowButton"
                                                 value = "Back" onClick = {this.goBack}/>
                     </div>
         }
        
         return (
-            <div style = { {float: "right"} }> 
+            <div>
                 Add New User
                 <br/> 
                     <div className = "todosComp" style = {{height: "100px"}}>
@@ -52,11 +52,11 @@ class AddUser extends Component
                             Email: <input type = "text" onChange = {this.getEmail}/>
                             <br></br>
         
-                            <input type = "button"  className = "yellowButton" style = {{float: "right"}} 
+                            <input type = "button"  className = "yellowButton"
                                                     value = "Add" onClick = {this.sendUser} /> &nbsp;
                         
         
-                            <input type = "button"  className = "yellowButton" style = {{float: "right"}} 
+                            <input type = "button"  className = "yellowButton"
                                                     value = "Cancel" onClick = {this.goBack} />
                     </div>
                     

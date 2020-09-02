@@ -37,7 +37,7 @@ class AddTaskComp extends Component
             return  <div className = "todosComp" style = {{height: "100px"}}>
                         Task Was Added Successfully
                         <input type = "button" className = "yellowButton" 
-                                            style = {{float: "right"}} 
+
                                             value = "Back" onClick = {this.goToAddTask} />
                     </div>
         }

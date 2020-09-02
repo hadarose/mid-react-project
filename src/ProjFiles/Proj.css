@@ -70,3 +70,36 @@
     height: 25px;
     background-color: lightgrey;
 }
+
+.more-info-box {
+    background: beige;
+    position: absolute;
+    left: 410px;
+    height: 100%;
+    top: 110px;
+}
+
+header {
+    margin: 20px 50px 30px;
+}
+
+.more-info-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0;
+    width: 353px;
+}
+
+.todo-item {
+    border: 1px solid purple;
+    padding: 10px;
+    margin: 10px;
+}
+
+.todo-item > div:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.todo-item .todo-item-info {
+    display: flex;
+}

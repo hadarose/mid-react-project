@@ -41,8 +41,7 @@ class AddTaskComp extends Component
         {
             return  <div className = "todosComp" style = {{height: "100px"}}>
                         Post Was Added Successfully
-                        <input type = "button" className = "yellowButton" 
-                                            style = {{float: "right"}} 
+                        <input type = "button" className = "yellowButton"
                                             value = "Back" onClick = {this.goToAddPost}
                                              />
                     </div>
@@ -50,7 +49,7 @@ class AddTaskComp extends Component
 
      
         return (
-       <div style = { {float: "right"} }> 
+       <div>
             New Post - User {this.props.id}  
             <br/> 
                 <div className = "todosComp" style = {{height: "100px"}}>
@@ -59,11 +58,11 @@ class AddTaskComp extends Component
 
                     Body: <input type = "text" onChange = {this.getBody}/>
                     <br></br>
-                    <input type = "button"  className = "yellowButton" style = {{float: "right"}} 
+                    <input type = "button"  className = "yellowButton"
                                             value = "Add" onClick = {this.sendPost} /> &nbsp;
                 
 
-                    <input type = "button"  className = "yellowButton" style = {{float: "right"}} 
+                    <input type = "button"  className = "yellowButton"
                                             value = "Cancel" onClick = {this.goBack} />
                 </div>
             

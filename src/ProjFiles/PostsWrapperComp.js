@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./Proj.css";
 import Posts from "./PostsComp";
 import AddPostComp from "./AddPostComp";
+import MoreInfoBox from "./MoreInfoBox";
 
 class TodosWrap extends Component
 {
@@ -39,16 +40,9 @@ class TodosWrap extends Component
         }
 
         return (
-        <div className = "postsComp">
-            
-            Posts - User {this.props.id}
-            &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
-        <input type = "button" className = "yellowButton" value = "Add" onClick = {this.AddPost} />
-            <br/>
-           {posts}
-        </div>
-
-            
+          <MoreInfoBox title={`Posts - User ${this.props.id}`} onClick={this.AddPost}>
+              {posts}
+          </MoreInfoBox>
         )
     }
 }

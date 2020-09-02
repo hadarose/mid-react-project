@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./Proj.css";
 import Todos from "./TodosComp";
 import AddTaskComp from "./AddTaskComp";
+import MoreInfoBox from "./MoreInfoBox";
 
 class TodosWrap extends Component
 {
@@ -40,16 +41,9 @@ class TodosWrap extends Component
         }
 
         return (
-        <div className = "todosComp">
-            
-            Todos - User {this.props.id}
-            &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
-        <input type = "button" className = "yellowButton" value = "Add" onClick = {this.AddTask} />
-            <br/>
-           {todos}
-        </div>
-
-            
+          <MoreInfoBox title={`Todos - User ${this.props.id}`} onClick={this.AddTask}>
+              {todos}
+          </MoreInfoBox>
         )
     }
 }
