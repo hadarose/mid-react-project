@@ -6,7 +6,7 @@ class AddTaskComp extends Component
     constructor(props)
     {
         super(props);
-        this.state = {title: "", body: "", isAdded: false, isGoBack: false};
+        this.state = {title: "", body: "", isAdded: false};
     }
 
     getTitle = (e) =>
@@ -18,6 +18,7 @@ class AddTaskComp extends Component
     {
         this.setState({body: e.target.value})
     }
+
     sendPost = () =>
     {
         this.props.callbackAddPost(this.props.id, this.state.title, this.state.body)
@@ -26,7 +27,12 @@ class AddTaskComp extends Component
 
     goBack = () =>
     {
-        this.setState({isGoBack: !this.state.isGoBack})
+        this.props.callbackGoBack();
+    }
+
+    goToAddPost = () =>
+    {
+        this.setState({isAdded: !this.state.isAdded});
     }
 
     render()
@@ -37,7 +43,7 @@ class AddTaskComp extends Component
                         Post Was Added Successfully
                         <input type = "button" className = "yellowButton" 
                                             style = {{float: "right"}} 
-                                            value = "Back"
+                                            value = "Back" onClick = {this.goToAddPost}
                                              />
                     </div>
         }

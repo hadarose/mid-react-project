@@ -16,6 +16,11 @@ class TodosWrap extends Component
         this.setState({isAddTask: !this.state.AddTask});
     }
 
+    goBack = () =>
+    {
+        this.setState({isAddTask: !this.state.isAddTask});
+    }
+
     render()
     {
         let todos = this.props.todos.map((todo, index) =>
@@ -30,7 +35,8 @@ class TodosWrap extends Component
         if (this.state.isAddTask)
         {
             return <AddTaskComp id = {this.props.id} 
-                                callbackAddTask = {this.props.callbackAddTodo} />
+                                callbackAddTask = {this.props.callbackAddTodo}
+                                callbackGoBack = {() => this.goBack()} />
         }
 
         return (

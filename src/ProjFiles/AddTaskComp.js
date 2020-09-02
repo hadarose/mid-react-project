@@ -20,9 +20,14 @@ class AddTaskComp extends Component
         this.setState({isAdded: !this.state.isAdded})
     }
 
+    goToAddTask = () =>
+    {
+        this.setState({isAdded: !this.state.isAdded});
+    }
+
     goBack = () =>
     {
-        this.setState({isGoBack: !this.state.isGoBack})
+        this.props.callbackGoBack();
     }
 
     render()
@@ -33,8 +38,7 @@ class AddTaskComp extends Component
                         Task Was Added Successfully
                         <input type = "button" className = "yellowButton" 
                                             style = {{float: "right"}} 
-                                            value = "Back"
-                                             />
+                                            value = "Back" onClick = {this.goToAddTask} />
                     </div>
         }
 

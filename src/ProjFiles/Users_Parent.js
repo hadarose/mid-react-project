@@ -34,6 +34,7 @@ class Parent extends Component
        newUsersArr[index].zipcode = obj.newZipcode;
 
        this.setState({users: newUsersArr})
+       console.log("what's being saved in parent? ", this.state.users[index].city)
     }
 
     deleteUser = (id) =>
@@ -114,6 +115,10 @@ class Parent extends Component
         this.setState({users: newUsersArr});
     }
 
+    goBack = () =>
+    {
+        this.setState({isAddUser: !this.state.isAddUser})
+    }
 
     render()
     {
@@ -127,11 +132,14 @@ class Parent extends Component
 
         if(this.state.isAddUser)
         {
-            addNewUser = <AddUserComp callbackAddUser = {(name, email) => this.getNewUser(name, email)} />
+            
+            addNewUser = <AddUserComp   callbackAddUser = {(name, email) => this.getNewUser(name, email)} 
+                                        callbackGoBack = {() => this.goBack()} />
         }
 
         users = users.map((user) =>
             {
+                console.log("am I in here after save and what's being sent? ", user.address.city)
                 return <User key = {user.id}    user = {user} 
                                                 todos = {user.todos}
                                                 posts = {user.posts} 
@@ -139,7 +147,8 @@ class Parent extends Component
                                                 callbackDelete = {id => this.deleteUser(id)}
                                                 callbackComplete = {(id, taskId) => this.markComplete(id, taskId)}
                                                 callbackAddTask = {(id, title) => this.addTask(id, title)}
-                                                callbackAddPost = {(id, title, body) => this.addPost(id, title, body)}/>
+                                                callbackAddPost = {(id, title, body) => this.addPost(id, title, body)}
+                                                 />
             })
 
         return (

@@ -41,6 +41,7 @@ class User extends Component
     {
         let obj =   {id: this.props.user.id, newName: this.state.newName, newEmail: this.state.newEmail,
                     newStreet: this.state.newStreet, newCity: this.state.newCity, newZipcode: this.state.newZipcode}
+        console.log("what is being sent after saveData in child? ", obj)
         this.props.callbackSave(obj);
     }
 
@@ -63,6 +64,7 @@ class User extends Component
 
         if (this.state.isOtherData)
         {
+            console.log("what being sent to AddressComp? ", this.props.user.address)
             addressComp = <Address  address = {this.props.user.address} 
                           callbackGetAddress = {(street, city, zipcode) => this.getAddress(street, city, zipcode)} />
         }
@@ -73,7 +75,8 @@ class User extends Component
             todosComp = <TodosWrap  id = {this.props.user.id} 
                                     todos = {this.props.user.todos} 
                                     callbackComplete = {this.props.callbackComplete}
-                                    callbackAddTodo = {this.props.callbackAddTask} />
+                                    callbackAddTodo = {this.props.callbackAddTask}
+                                     />
             postsComp = <PostsWrap  id = {this.props.user.id} 
                                     posts = {this.props.user.posts} 
                                     
@@ -91,7 +94,7 @@ class User extends Component
                 <br></br>
                 <br></br>
 
-                <input type = "button" className = "grayButton" value = "Other Data" onMouseOver = {this.showOtherData}/>
+                <input type = "button" className = "grayButton" value = "Other Data" onClick = {this.showOtherData}/>
                 
                   {addressComp}
                 
@@ -101,9 +104,12 @@ class User extends Component
                 <input type = "button" className = "yellowButton" value = "Delete" onClick = {this.deleteUser} />
              
             </div>
-            <div>{todosComp}</div>
-            <div>{postsComp}</div>  
+            <div style = {{display: "flex", flexDirection: "column"}}>
+                <div>{todosComp}</div>
+                <div>{postsComp}</div>
             </div>
+              
+        </div>
         )
     }
 }

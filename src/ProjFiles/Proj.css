@@ -11,11 +11,13 @@
     border: 2px solid red;
     border-radius: 10px;
     padding-bottom: 5px;
+    margin: 10px;
 }
 
 .redBorderComp.selected
 {
     background-color: orange;
+
 }
 
 .greenBorderComp
@@ -24,6 +26,7 @@
     border: 2px solid green;
     border-radius: 10px;
     padding-bottom: 5px;
+    margin: 10px;
 }
 
 .greenBorderComp.selected
@@ -40,7 +43,6 @@
 
 .todosComp
 {
-    float: right;
     width: 450px;
     border: 2px solid black;
     margin: 20px;
@@ -48,7 +50,6 @@
 
 .postsComp
 {
-    float: center;
     width: 450px;
     border: 2px solid black;
     margin: 20px;
