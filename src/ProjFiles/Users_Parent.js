@@ -23,27 +23,26 @@ class Parent extends Component
         this.setState({searchValue: e.target.value})
     }
 
-    saveData = (user) =>
+    saveData = (obj) =>
     {
-       /* // Long Writing
+       // Long Writing
        let index = this.state.users.findIndex(item => item.id === obj.id);
        let newUsersArr = this.state.users;
        newUsersArr[index].name = obj.newName;
        newUsersArr[index].email = obj.newEmail;
-       newUsersArr[index].street = obj.newStreet;
-       newUsersArr[index].city = obj.newCity;
-       newUsersArr[index].zipcode = obj.newZipcode;*/
+       newUsersArr[index].address.street = obj.newStreet;
+       newUsersArr[index].address.city = obj.newCity;
+       newUsersArr[index].address.zipcode = obj.newZipcode;
 
-       // Short Writing
+       /*// Short Writing
        let { users } = this.state;
        let index = this.state.users.findIndex(item => item.id === user.id);
        let newUsersArr = [...users];
 
        let {newName: name, newEmail: email, newStreet: street, newCity: city, newZipcode: zipcode } = user;
-       newUsersArr[index] = { name, email, street, city, zipcode };
+       newUsersArr[index] = { name, email, street, city, zipcode };*/
 
        this.setState({users: newUsersArr})
-       console.log("what's being saved in parent? ", this.state.users[index].city)
     }
 
     deleteUser = (id) =>
@@ -148,7 +147,6 @@ class Parent extends Component
 
         users = users.map((user) =>
             {
-                console.log("am I in here after save and what's being sent? ", user.address.city)
                 return <User key = {user.id}    user = {user} 
                                                 todos = {user.todos}
                                                 posts = {user.posts} 

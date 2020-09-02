@@ -44,17 +44,17 @@ class AddTaskComp extends Component
 
      
         return (
-       <div style = { {float: "right"} }> 
+       <div> 
             New Todo - User {this.props.id}  
             <br/> 
                 <div className = "todosComp" style = {{height: "100px"}}>
                     Title: <input type = "text" onChange = {this.getTitle}/>
                     <br></br>
-                    <input type = "button"  className = "yellowButton" style = {{float: "right"}} 
+                    <input type = "button"  className = "yellowButton" 
                                             value = "Add" onClick = {this.sendTask} /> &nbsp;
                 
 
-                    <input type = "button"  className = "yellowButton" style = {{float: "right"}} 
+                    <input type = "button"  className = "yellowButton"  
                                             value = "Cancel" onClick = {this.goBack} />
                 </div>
             

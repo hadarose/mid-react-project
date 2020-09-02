@@ -31,8 +31,6 @@ const getAllUsers = async () =>
             return item.posts = allPosts.filter(x => x.userId === item.id).slice(0,2);        
         })
 ;
-
-   usersArr[0].todos = [{userId: 1, id: 1, title: "delectus aut autem", completed: true}]
    
    return (usersArr);
 }

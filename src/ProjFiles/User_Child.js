@@ -9,11 +9,11 @@ class User extends Component
     constructor(props)
     {
         super(props);
-        this.state = {isOtherData: false, isSelected: false,    newName: "", 
-                                                                newEmail: "", 
-                                                                newStreet: "",
-                                                                newCity: "",
-                                                                newZipcode: ""}
+        this.state = {isOtherData: false, isSelected: false,    newName: this.props.user.name, 
+                                                                newEmail: this.props.user.email, 
+                                                                newStreet: this.props.user.address.street,
+                                                                newCity: this.props.user.address.city,
+                                                                newZipcode: this.props.user.address.zipcode}
     }
 
     showOtherData = () =>
@@ -39,9 +39,9 @@ class User extends Component
 
     sendData = () =>
     {
+        
         let obj =   {id: this.props.user.id, newName: this.state.newName, newEmail: this.state.newEmail,
                     newStreet: this.state.newStreet, newCity: this.state.newCity, newZipcode: this.state.newZipcode}
-        console.log("what is being sent after saveData in child? ", obj)
         this.props.callbackSave(obj);
     }
 
@@ -64,7 +64,6 @@ class User extends Component
 
         if (this.state.isOtherData)
         {
-            console.log("what being sent to AddressComp? ", this.props.user.address)
             addressComp = <Address  address = {this.props.user.address} 
                           callbackGetAddress = {(street, city, zipcode) => this.getAddress(street, city, zipcode)} />
         }
@@ -84,7 +83,7 @@ class User extends Component
         }
 
         return ( 
-        <div style = {{display: "flex"}}>
+        <div >
             <div className = {styleName} onClick = {this.showTodos}>
                 ID: &nbsp; {this.props.user.id}<br></br>
                 Name: <input className = "inputText" type = "text" defaultValue = {this.props.user.name} onChange = {this.getInputName} />
@@ -104,7 +103,7 @@ class User extends Component
                 <input type = "button" className = "yellowButton" value = "Delete" onClick = {this.deleteUser} />
              
             </div>
-            <div style = {{display: "flex", flexDirection: "column"}}>
+            <div style = {{marginLeft: "350px", display: "flex", flexDirection: "column"}}>
                 <div>{todosComp}</div>
                 <div>{postsComp}</div>
             </div>

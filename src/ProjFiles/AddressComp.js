@@ -6,7 +6,9 @@ class Address extends Component
     constructor(props)
     {
         super(props);
-        this.state = {newStreet: "", newCity: "", newZipcode: ""}
+        this.state = {  newStreet: this.props.address.street, 
+                        newCity:  this.props.address.city, 
+                        newZipcode: this.props.address.zipcode}
     }
 
     getInputStreet = (e) =>
