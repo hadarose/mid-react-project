@@ -23,15 +23,24 @@ class Parent extends Component
         this.setState({searchValue: e.target.value})
     }
 
-    saveData = (obj) =>
+    saveData = (user) =>
     {
+       /* // Long Writing
        let index = this.state.users.findIndex(item => item.id === obj.id);
        let newUsersArr = this.state.users;
        newUsersArr[index].name = obj.newName;
        newUsersArr[index].email = obj.newEmail;
        newUsersArr[index].street = obj.newStreet;
        newUsersArr[index].city = obj.newCity;
-       newUsersArr[index].zipcode = obj.newZipcode;
+       newUsersArr[index].zipcode = obj.newZipcode;*/
+
+       // Short Writing
+       let { users } = this.state;
+       let index = this.state.users.findIndex(item => item.id === user.id);
+       let newUsersArr = [...users];
+
+       let {newName: name, newEmail: email, newStreet: street, newCity: city, newZipcode: zipcode } = user;
+       newUsersArr[index] = { name, email, street, city, zipcode };
 
        this.setState({users: newUsersArr})
        console.log("what's being saved in parent? ", this.state.users[index].city)
