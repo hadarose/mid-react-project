@@ -70,7 +70,7 @@ class Parent extends Component
 
        // Getting last task Id
        let userTasks = newUsersArr[userIndex].todos;
-       let lastTaskId = userTasks[userTasks.length - 1].id;
+       let lastTaskId = userTasks[0] ? (userTasks[userTasks.length - 1].id) : 1;
 
        // Insert a new Todo
        newUsersArr[userIndex].todos.push({userId: id, id: lastTaskId + 1, title: title, completed: false});
@@ -85,7 +85,7 @@ class Parent extends Component
 
        // Getting last post Id
        let userPosts = newUsersArr[userIndex].posts;
-       let lastPostId = userPosts[userPosts.length - 1].id;
+       let lastPostId = userPosts[0] ? (userPosts[userPosts.length - 1].id) : 1;
 
        // Insert a new Todo
        newUsersArr[userIndex].posts.push({userId: id, id: lastPostId + 1, title: title, body: body});
@@ -103,9 +103,8 @@ class Parent extends Component
         let newUsersArr = this.state.users;
  
         // Getting last UserId
-        let nextUserId = newUsersArr[newUsersArr.length - 1].id + 1;
+        let nextUserId = newUsersArr[0] ? (newUsersArr[newUsersArr.length - 1].id + 1) : 1;
  
-        
         // Insert a new user
         let newUser = {
                     "id": nextUserId,
@@ -160,13 +159,13 @@ class Parent extends Component
 
         return (
             <div>
-                <div>
+                <header>
                     <h1>Hadar's first React Project</h1>
                     Search <input type = "text" onChange = {this.getSearchData} />
                     &nbsp; &nbsp;
                     <input className = "yellowButton" type = "button" value = "Add" onClick = {this.addUser} />
-                </div>
-                <div style = { {float: "right"} }>
+                </header>
+                <div className = "more-info-box">
                     {addNewUser}
                 </div>
                 <ul>

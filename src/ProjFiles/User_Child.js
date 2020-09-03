@@ -57,7 +57,7 @@ class User extends Component
 
     render()
     {
-        let styleName = this.props.user.todos.some(item => !item.completed) ? "redBorderComp" : "greenBorderComp";
+        let userClassNames = this.props.user.todos.some(item => !item.completed) ? "redBorderComp" : "greenBorderComp";
         let addressComp;
         let todosComp;
         let postsComp;
@@ -70,7 +70,7 @@ class User extends Component
 
         if(this.state.isSelected)
         {
-            styleName = styleName + " selected";
+            userClassNames = userClassNames + " selected";
             todosComp = <TodosWrap  id = {this.props.user.id} 
                                     todos = {this.props.user.todos} 
                                     callbackComplete = {this.props.callbackComplete}
@@ -84,7 +84,7 @@ class User extends Component
 
         return ( 
         <div >
-            <div className = {styleName} onClick = {this.showTodos}>
+            <div className = {userClassNames} onClick = {this.showTodos}>
                 ID: &nbsp; {this.props.user.id}<br></br>
                 Name: <input className = "inputText" type = "text" defaultValue = {this.props.user.name} onChange = {this.getInputName} />
                 <br/>
@@ -103,7 +103,7 @@ class User extends Component
                 <input type = "button" className = "yellowButton" value = "Delete" onClick = {this.deleteUser} />
              
             </div>
-            <div style = {{marginLeft: "350px", display: "flex", flexDirection: "column"}}>
+            <div className = "more-info-box">
                 <div>{todosComp}</div>
                 <div>{postsComp}</div>
             </div>

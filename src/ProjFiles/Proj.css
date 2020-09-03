@@ -1,3 +1,8 @@
+header 
+{
+    margin: 20px 50px 30px;
+}
+
 .blackBorderComp
 {
     width: 250px;
@@ -17,7 +22,6 @@
 .redBorderComp.selected
 {
     background-color: orange;
-
 }
 
 .greenBorderComp
@@ -34,11 +38,32 @@
     background-color: orange;
 }
 
-.purpleBorderComp
+.todo-item 
 {
+    border: 1px solid purple;
+    padding: 10px;
     margin: 10px;
-    width: 350px;
-    border: 2px solid purple;
+}
+
+.todo-item .todo-item-info 
+{
+    display: flex;
+}
+
+.more-info-box
+{
+    position: absolute;
+    left: 410px;
+    height: 100%;
+    top: 110px;
+}
+
+.more-info-header 
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0;
+    width: 430px;
 }
 
 .todosComp
@@ -54,9 +79,11 @@
     border: 2px solid black;
     margin: 20px;
 }
+
+
 .inputText
 {
-    width: 100px;  
+    width: 150px;  
 }
 
 .yellowButton
@@ -70,3 +97,4 @@
     height: 25px;
     background-color: lightgrey;
 }
+

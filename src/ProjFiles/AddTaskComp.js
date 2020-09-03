@@ -36,9 +36,8 @@ class AddTaskComp extends Component
         {
             return  <div className = "todosComp" style = {{height: "100px"}}>
                         Task Was Added Successfully
-                        <input type = "button" className = "yellowButton" 
-                                            style = {{float: "right"}} 
-                                            value = "Back" onClick = {this.goToAddTask} />
+                        <input type = "button"  className = "yellowButton" value = "Back" 
+                                                style = { {float: "right"}} onClick = {this.goToAddTask} />
                     </div>
         }
 
@@ -50,12 +49,12 @@ class AddTaskComp extends Component
                 <div className = "todosComp" style = {{height: "100px"}}>
                     Title: <input type = "text" onChange = {this.getTitle}/>
                     <br></br>
-                    <input type = "button"  className = "yellowButton" 
-                                            value = "Add" onClick = {this.sendTask} /> &nbsp;
-                
-
-                    <input type = "button"  className = "yellowButton"  
-                                            value = "Cancel" onClick = {this.goBack} />
+                  
+                        <input type = "button"  className = "yellowButton" value = "Add" 
+                                                style = {{float: "right"}} onClick = {this.sendTask} /> 
+                        <input type = "button"  className = "yellowButton" value = "Cancel" 
+                                                style = {{float: "right"}} onClick = {this.goBack} />
+                 
                 </div>
             
         </div>    

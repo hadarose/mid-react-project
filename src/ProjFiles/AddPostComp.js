@@ -41,16 +41,14 @@ class AddTaskComp extends Component
         {
             return  <div className = "todosComp" style = {{height: "100px"}}>
                         Post Was Added Successfully
-                        <input type = "button" className = "yellowButton" 
-                                            style = {{float: "right"}} 
-                                            value = "Back" onClick = {this.goToAddPost}
-                                             />
+                        <input type = "button"  className = "yellowButton" value = "Back" 
+                                                style = { {float: "right"} } onClick = {this.goToAddPost}/>
                     </div>
         }
 
      
         return (
-       <div style = { {float: "right"} }> 
+       <div > 
             New Post - User {this.props.id}  
             <br/> 
                 <div className = "todosComp" style = {{height: "100px"}}>

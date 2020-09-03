@@ -19,18 +19,17 @@ class Todos extends Component
 
         if (this.props.status === "False")
         {
-            markComplete = <input type = "button" style = { {float: "right"} } 
-                            className = "yellowButton" value = "Mark Completed" onClick = {this.markTaskComplete} />
+            markComplete = <input type = "button" className = "yellowButton" 
+                            value = "Mark Completed" onClick = {this.markTaskComplete} />
         }
       
         return (
-        
-        <div className = "purpleBorderComp">
-            <b>Title:</b> {this.props.title}
-            <br/>
-            <b>Completed:</b> {this.props.status}
-            {markComplete}
-        </div>  
+
+            <div className = "todo-item">
+                    <div className = "todo-item-info"><b>Title:&nbsp;</b> {this.props.title}</div>
+                    <div className = "todo-item-info"><div><b>Completed:&nbsp;</b></div><div>{this.props.status}</div></div>
+               <div style = { {textAlign: "right"}}>{markComplete}</div> 
+            </div>    
         )
     }
 }

@@ -13,13 +13,13 @@ class Posts extends Component
     {
 
         return (
-        
-        <div className = "purpleBorderComp">
-            <b>Title:</b> {this.props.title}
-            <br/>
-            <b>Body:</b> {this.props.body}
-        </div>  
+
+            <div className = "todo-item">
+                    <div className = "todo-item-info"><b>Title:&nbsp;</b> {this.props.title}</div>
+                    <div className = "todo-item-info"><div><b>Body:&nbsp;</b></div><div>{this.props.body}</div></div>
+            </div>    
         )
+        
     }
 }
 
