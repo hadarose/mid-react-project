@@ -160,7 +160,7 @@ class Parent extends Component
         return (
             <div>
                 <header>
-                    <h1>Hadar's first React Project</h1>
+                    <h1>Users Management Web App</h1>
                     Search <input type = "text" onChange = {this.getSearchData} />
                     &nbsp; &nbsp;
                     <input className = "yellowButton" type = "button" value = "Add" onClick = {this.addUser} />
