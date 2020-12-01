@@ -1,12 +1,10 @@
-import React from 'react';
-import Parent from "./ProjFiles/Users_Parent";
+import React from "react";
+import Users from "./Pages/Users/Users";
 
 function App() {
   return (
     <div>
-      
-      <Parent />
-
+      <Users />
     </div>
   );
 }
